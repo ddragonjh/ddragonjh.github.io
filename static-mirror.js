@@ -1,46 +1,64 @@
 (() => {
   const search = document.querySelector('[aria-label="Search fixes"]');
   const language = document.querySelector('[aria-label="Reading language"]');
-  const cards = Array.from(document.querySelectorAll('.directory-item'));
-  const chips = Array.from(document.querySelectorAll('.category-chip'));
-  const resultHeading = document.querySelector('#fix-library h2');
+  const rows = Array.from(document.querySelectorAll('.issue-row'));
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+  const resultHeading = document.querySelector('[data-result-count]');
   let category = 'All';
 
   const apply = () => {
     const query = (search?.value || '').trim().toLowerCase();
     let visible = 0;
-    for (const card of cards) {
-      const cardCategory = card.querySelector('.directory-meta span')?.textContent?.trim() || '';
-      const matchesCategory = category === 'All' || cardCategory === category;
-      const matchesQuery = !query || (card.textContent || '').toLowerCase().includes(query);
+    for (const row of rows) {
+      const matchesCategory = category === 'All' || row.dataset.category === category;
+      const matchesQuery = !query || (row.textContent || '').toLowerCase().includes(query);
       const show = matchesCategory && matchesQuery;
-      card.hidden = !show;
+      row.hidden = !show;
       if (show) visible += 1;
     }
-    if (resultHeading) resultHeading.textContent = visible + (visible === 1 ? ' result' : ' results');
+    if (resultHeading) resultHeading.textContent = visible + (visible === 1 ? ' entry' : ' entries');
   };
 
   search?.addEventListener('input', apply);
-  for (const chip of chips) {
-    chip.addEventListener('click', () => {
-      category = chip.textContent?.trim() || 'All';
-      for (const item of chips) item.classList.toggle('active', item === chip);
+  for (const tab of tabs) {
+    tab.addEventListener('click', () => {
+      category = tab.textContent?.trim() || 'All';
+      const indicator = document.querySelector('.category-tab-indicator');
+      for (const item of tabs) {
+        const active = item === tab;
+        item.setAttribute('aria-selected', active ? 'true' : 'false');
+        item.tabIndex = active ? 0 : -1;
+      }
+      if (indicator) tab.appendChild(indicator);
       apply();
     });
   }
 
+  document.querySelector('[role="tablist"]')?.addEventListener('keydown', (event) => {
+    if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+    const current = tabs.indexOf(document.activeElement);
+    let next = current < 0 ? 0 : current;
+    if (event.key === 'ArrowRight') next = (next + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') next = (next - 1 + tabs.length) % tabs.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = tabs.length - 1;
+    event.preventDefault();
+    tabs[next]?.focus();
+    tabs[next]?.click();
+  });
+
   language?.addEventListener('change', () => {
     const locale = language.value;
-    for (const card of cards) {
-      const current = new URL(card.dataset.sourceUrl || card.href, location.origin);
+    for (const row of rows) {
+      const current = new URL(row.dataset.sourceUrl || row.href, location.origin);
       const sourceUrl = 'https://ddragonjh.github.io' + current.pathname;
-      card.dataset.sourceUrl = sourceUrl;
+      row.dataset.sourceUrl = sourceUrl;
       if (locale === 'en') {
-        card.href = sourceUrl;
-        card.target = '';
+        row.href = sourceUrl;
+        row.target = '';
       } else {
-        card.href = 'https://translate.google.com/translate?sl=en&tl=' + encodeURIComponent(locale) + '&u=' + encodeURIComponent(sourceUrl);
-        card.target = '_blank';
+        row.href = 'https://translate.google.com/translate?sl=en&tl=' + encodeURIComponent(locale) + '&u=' + encodeURIComponent(sourceUrl);
+        row.target = '_blank';
       }
     }
   });
