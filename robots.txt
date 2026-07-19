@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://ddragonjh.github.io/sitemap.xml
+Host: https://ddragonjh.github.io
