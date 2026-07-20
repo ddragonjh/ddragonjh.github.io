@@ -62,4 +62,66 @@
       }
     }
   });
+
+  const diagnosticInput = document.querySelector('#diagnostic-text');
+  const diagnosticButton = document.querySelector('.diagnostic-input button');
+  const diagnosticResults = document.querySelector('[data-diagnostic-results]');
+  const diagnosticData = document.querySelector('#diagnostic-data');
+
+  diagnosticButton?.addEventListener('click', () => {
+    if (!diagnosticInput || !diagnosticResults || !diagnosticData) return;
+    const input = diagnosticInput.value.trim().toLowerCase();
+    let entries = [];
+    try { entries = JSON.parse(diagnosticData.textContent || '[]'); } catch { entries = []; }
+
+    const matches = entries.map((entry) => {
+      let score = 0;
+      const error = entry.error.toLowerCase();
+      if (input.includes(error)) score += 60;
+      if (input.includes(entry.product.toLowerCase())) score += 14;
+      for (const term of entry.terms) {
+        const normalized = term.toLowerCase();
+        if (normalized.length >= 4 && input.includes(normalized)) score += 18;
+      }
+      const inputTokens = new Set(input.match(/[a-z0-9_-]{3,}/g) || []);
+      const candidateTokens = new Set(
+        [entry.product, entry.error, ...entry.terms].join(' ').toLowerCase().match(/[a-z0-9_-]{3,}/g) || []
+      );
+      for (const token of inputTokens) if (candidateTokens.has(token)) score += 2;
+      return { entry, score };
+    }).filter((result) => result.score > 3).sort((a, b) => b.score - a.score).slice(0, 5);
+
+    diagnosticResults.replaceChildren();
+    if (!matches.length || input.length < 4) {
+      const empty = document.createElement('div');
+      empty.className = 'diagnostic-empty';
+      const title = document.createElement('strong');
+      title.textContent = 'No reliable match yet.';
+      const note = document.createElement('p');
+      note.textContent = 'Keep the first concrete error line and try the main index.';
+      const link = document.createElement('a');
+      link.href = '/#fix-library';
+      link.textContent = 'Browse all fixes';
+      empty.append(title, note, link);
+      diagnosticResults.append(empty);
+      return;
+    }
+
+    const eyebrow = document.createElement('p');
+    eyebrow.className = 'eyebrow';
+    eyebrow.textContent = 'Closest maintained fixes';
+    diagnosticResults.append(eyebrow);
+    for (const { entry } of matches) {
+      const link = document.createElement('a');
+      link.href = entry.href;
+      const category = document.createElement('small');
+      category.textContent = entry.category;
+      const title = document.createElement('strong');
+      title.textContent = entry.product + ': ' + entry.error;
+      const quickFix = document.createElement('span');
+      quickFix.textContent = entry.quickFix;
+      link.append(category, title, quickFix);
+      diagnosticResults.append(link);
+    }
+  });
 })();

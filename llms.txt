@@ -18,6 +18,19 @@ Source-linked troubleshooting for exact AI, API, automation, cloud, container, P
 - [Machine learning](https://ddragonjh.github.io/category/machine-learning)
 - [Python](https://ddragonjh.github.io/category/python)
 
+## Field guides
+- [How to read an error message without guessing](https://ddragonjh.github.io/guides/read-error-messages-systematically): A repeatable method for separating the first failure from the noise that follows it.
+- [API errors: status codes, retries, and safe recovery](https://ddragonjh.github.io/guides/api-status-codes-retries): How to decide whether an API request should be corrected, delayed, retried, or escalated.
+- [Authentication and permission errors without exposing secrets](https://ddragonjh.github.io/guides/authentication-permission-errors): A safe diagnostic order for invalid keys, forbidden requests, SSH failures, and cloud access problems.
+- [A diagnostic order for Python and npm install failures](https://ddragonjh.github.io/guides/python-npm-install-errors): Find version, platform, build, permission, and dependency problems before deleting lockfiles or environments.
+- [Container failures from Docker to Kubernetes](https://ddragonjh.github.io/guides/docker-kubernetes-container-failures): Trace image, startup, port, storage, memory, and health failures in the order they occur.
+- [GPU and CUDA errors: memory, drivers, and runtime compatibility](https://ddragonjh.github.io/guides/cuda-gpu-memory-errors): A practical way to distinguish capacity problems from driver, toolkit, package, and container mismatches.
+
+## Site standards and tools
+- [Private error matcher](https://ddragonjh.github.io/diagnose)
+- [Editorial policy](https://ddragonjh.github.io/editorial-policy)
+- [Privacy policy](https://ddragonjh.github.io/privacy)
+
 ## Troubleshooting guides
 - [ComfyUI: CUDA out of memory](https://ddragonjh.github.io/en/fix/comfyui-cuda-out-of-memory): Set batch size to 1 and lower image resolution.
 - [Cursor: MCP server not working](https://ddragonjh.github.io/en/fix/cursor-mcp-server-not-working): Validate the JSON and replace relative paths with absolute paths.
