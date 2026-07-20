@@ -1,9 +1,18 @@
 {
-  "_Icon-Do2iPgz6.js": {
-    "file": "assets/Icon-Do2iPgz6.js",
+  "_Icon-CEMdiw2B.js": {
+    "file": "assets/Icon-CEMdiw2B.js",
     "name": "Icon",
     "imports": [
       "_rolldown-runtime-BYbx6iT9.js",
+      "_framework-BpSqSxVs.js"
+    ]
+  },
+  "_createLucideIcon-RUrIzK4J.js": {
+    "file": "assets/createLucideIcon-RUrIzK4J.js",
+    "name": "createLucideIcon",
+    "imports": [
+      "_rolldown-runtime-BYbx6iT9.js",
+      "_Icon-CEMdiw2B.js",
       "_framework-BpSqSxVs.js"
     ]
   },
@@ -18,13 +27,11 @@
     "file": "assets/rolldown-runtime-BYbx6iT9.js",
     "name": "rolldown-runtime"
   },
-  "_search-47_KD82V.js": {
-    "file": "assets/search-47_KD82V.js",
+  "_search-BhfEoRtx.js": {
+    "file": "assets/search-BhfEoRtx.js",
     "name": "search",
     "imports": [
-      "_rolldown-runtime-BYbx6iT9.js",
-      "_Icon-Do2iPgz6.js",
-      "_framework-BpSqSxVs.js"
+      "_createLucideIcon-RUrIzK4J.js"
     ]
   },
   "app/AdSlot.tsx": {
@@ -37,33 +44,45 @@
       "_framework-BpSqSxVs.js"
     ]
   },
+  "app/debug-lab/DebugLab.tsx": {
+    "file": "assets/DebugLab-BVyqC3uE.js",
+    "name": "DebugLab",
+    "src": "app/debug-lab/DebugLab.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-BYbx6iT9.js",
+      "_createLucideIcon-RUrIzK4J.js",
+      "_framework-BpSqSxVs.js"
+    ]
+  },
   "app/diagnose/DiagnosticTool.tsx": {
-    "file": "assets/DiagnosticTool-CWbGHC2v.js",
+    "file": "assets/DiagnosticTool-CWonHXQq.js",
     "name": "DiagnosticTool",
     "src": "app/diagnose/DiagnosticTool.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-BYbx6iT9.js",
-      "_search-47_KD82V.js",
+      "_search-BhfEoRtx.js",
       "_framework-BpSqSxVs.js",
       "node_modules/vinext/dist/shims/link.js"
     ]
   },
   "app/page.tsx": {
-    "file": "assets/page-DgVJugbZ.js",
+    "file": "assets/page-bI5ouoFc.js",
     "name": "page",
     "src": "app/page.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-BYbx6iT9.js",
       "app/AdSlot.tsx",
-      "_search-47_KD82V.js",
+      "_createLucideIcon-RUrIzK4J.js",
+      "_search-BhfEoRtx.js",
       "_framework-BpSqSxVs.js",
       "node_modules/vinext/dist/shims/link.js"
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-Brz3E1dt.js",
+    "file": "assets/layout-segment-context-Iv4M4H1M.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -74,7 +93,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/link.js": {
-    "file": "assets/link-Djvctx7f.js",
+    "file": "assets/link-CGchsVfr.js",
     "name": "link",
     "src": "node_modules/vinext/dist/shims/link.js",
     "isDynamicEntry": true,
@@ -88,7 +107,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/router.js": {
-    "file": "assets/router-DnOHNl2Q.js",
+    "file": "assets/router-CN5snPC9.js",
     "name": "router",
     "src": "node_modules/vinext/dist/shims/router.js",
     "isDynamicEntry": true,
@@ -103,7 +122,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/script.js": {
-    "file": "assets/script-Cak59U_z.js",
+    "file": "assets/script-BHLR82vf.js",
     "name": "script",
     "src": "node_modules/vinext/dist/shims/script.js",
     "isDynamicEntry": true,
@@ -113,7 +132,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-BeZsiGuC.js",
+    "file": "assets/index-CQgNIYX6.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -123,13 +142,14 @@
     ],
     "dynamicImports": [
       "node_modules/vinext/dist/shims/layout-segment-context.js",
-      "_Icon-Do2iPgz6.js",
+      "_Icon-CEMdiw2B.js",
       "virtual:vinext-app-browser-entry",
       "node_modules/vinext/dist/shims/script.js",
       "app/page.tsx",
       "app/diagnose/DiagnosticTool.tsx",
       "app/AdSlot.tsx",
-      "node_modules/vinext/dist/shims/link.js"
+      "node_modules/vinext/dist/shims/link.js",
+      "app/debug-lab/DebugLab.tsx"
     ]
   }
 }

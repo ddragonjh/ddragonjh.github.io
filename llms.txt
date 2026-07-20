@@ -25,9 +25,11 @@ Source-linked troubleshooting for exact AI, API, automation, cloud, container, P
 - [A diagnostic order for Python and npm install failures](https://ddragonjh.github.io/guides/python-npm-install-errors): Find version, platform, build, permission, and dependency problems before deleting lockfiles or environments.
 - [Container failures from Docker to Kubernetes](https://ddragonjh.github.io/guides/docker-kubernetes-container-failures): Trace image, startup, port, storage, memory, and health failures in the order they occur.
 - [GPU and CUDA errors: memory, drivers, and runtime compatibility](https://ddragonjh.github.io/guides/cuda-gpu-memory-errors): A practical way to distinguish capacity problems from driver, toolkit, package, and container mismatches.
+- [How to share debug logs without leaking secrets](https://ddragonjh.github.io/guides/share-debug-logs-without-leaking-secrets): Preserve the evidence another person needs while removing credentials, personal data, and machine-specific noise.
 
 ## Site standards and tools
 - [Private error matcher](https://ddragonjh.github.io/diagnose)
+- [Private log sanitizer, run comparison, and debug handoff](https://ddragonjh.github.io/debug-lab)
 - [Editorial policy](https://ddragonjh.github.io/editorial-policy)
 - [Privacy policy](https://ddragonjh.github.io/privacy)
 
