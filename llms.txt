@@ -1,0 +1,70 @@
+# Fix Atlas
+
+Source-linked troubleshooting for exact AI, API, automation, cloud, container, Python, and JavaScript errors.
+
+## Topic directories
+- [AI API](https://ddragonjh.github.io/category/ai-api)
+- [AI assistants](https://ddragonjh.github.io/category/ai-assistants)
+- [AI coding](https://ddragonjh.github.io/category/ai-coding)
+- [AI image](https://ddragonjh.github.io/category/ai-image)
+- [Audio AI](https://ddragonjh.github.io/category/audio-ai)
+- [Automation](https://ddragonjh.github.io/category/automation)
+- [Cloud](https://ddragonjh.github.io/category/cloud)
+- [Database](https://ddragonjh.github.io/category/database)
+- [DevOps](https://ddragonjh.github.io/category/devops)
+- [Developer tools](https://ddragonjh.github.io/category/developer-tools)
+- [JavaScript](https://ddragonjh.github.io/category/javascript)
+- [Local AI](https://ddragonjh.github.io/category/local-ai)
+- [Machine learning](https://ddragonjh.github.io/category/machine-learning)
+- [Python](https://ddragonjh.github.io/category/python)
+
+## Troubleshooting guides
+- [ComfyUI: CUDA out of memory](https://ddragonjh.github.io/en/fix/comfyui-cuda-out-of-memory): Set batch size to 1 and lower image resolution.
+- [Cursor: MCP server not working](https://ddragonjh.github.io/en/fix/cursor-mcp-server-not-working): Validate the JSON and replace relative paths with absolute paths.
+- [n8n: webhook not responding](https://ddragonjh.github.io/en/fix/n8n-webhook-not-responding): Activate the workflow before using the production URL.
+- [Stable Diffusion: black image output](https://ddragonjh.github.io/en/fix/stable-diffusion-black-image): Try a known compatible VAE.
+- [Docker: port is already allocated](https://ddragonjh.github.io/en/fix/docker-port-is-already-allocated): Find the process using the port.
+- [Python: failed building wheel](https://ddragonjh.github.io/en/fix/python-failed-building-wheel): Upgrade pip, setuptools, and wheel.
+- [Ollama: slow response or empty output](https://ddragonjh.github.io/en/fix/ollama-slow-response-empty-output): Test with a smaller quantized model.
+- [npm: ERESOLVE dependency conflict](https://ddragonjh.github.io/en/fix/npm-eresolve-dependency-conflict): Read the first peer dependency conflict in the log.
+- [Claude Code: permission denied](https://ddragonjh.github.io/en/fix/claude-code-permission-denied): Check the file owner and confirm that your current user can edit the project.
+- [Claude Code: MCP server disconnected](https://ddragonjh.github.io/en/fix/claude-code-mcp-server-disconnected): Run the configured command manually and resolve its first startup error.
+- [Whisper: ffmpeg not found](https://ddragonjh.github.io/en/fix/whisper-ffmpeg-not-found): Install FFmpeg using the package method recommended for your operating system.
+- [Supabase: RLS permission denied](https://ddragonjh.github.io/en/fix/supabase-rls-permission-denied): Confirm the request is authenticated and inspect the current user id.
+- [Cloudflare Workers: Error 1101: Worker threw exception](https://ddragonjh.github.io/en/fix/cloudflare-worker-error-1101): Stream production logs and reproduce one failing request.
+- [OpenAI API: 429 rate limit exceeded](https://ddragonjh.github.io/en/fix/openai-api-429-rate-limit): Read the error type and headers to distinguish rate limits from quota problems.
+- [OpenAI API: invalid API key](https://ddragonjh.github.io/en/fix/openai-api-invalid-api-key): Confirm the runtime sees a non-empty key without printing the full secret.
+- [GitHub: Permission denied (publickey)](https://ddragonjh.github.io/en/fix/github-permission-denied-publickey): Test the GitHub SSH connection and note which account responds.
+- [Next.js: hydration mismatch](https://ddragonjh.github.io/en/fix/nextjs-hydration-mismatch): Find the first component named in the hydration warning.
+- [Node.js: JavaScript heap out of memory](https://ddragonjh.github.io/en/fix/node-heap-out-of-memory): Confirm available system or container memory before raising the Node limit.
+- [PyTorch: CUDA is not available](https://ddragonjh.github.io/en/fix/pytorch-cuda-not-available): Confirm the operating system sees the GPU with nvidia-smi.
+- [Hugging Face: 401 unauthorized for gated model](https://ddragonjh.github.io/en/fix/huggingface-gated-model-401): Open the model page while signed in and request or accept access.
+- [Ollama: connection refused on port 11434](https://ddragonjh.github.io/en/fix/ollama-connection-refused): Start Ollama and verify the local API from the same environment as the client.
+- [ComfyUI: missing custom nodes](https://ddragonjh.github.io/en/fix/comfyui-missing-custom-node): Record every missing node name shown by the workflow.
+- [Docker: Cannot connect to the Docker daemon](https://ddragonjh.github.io/en/fix/docker-daemon-not-running): Start Docker Desktop or the operating-system Docker service.
+- [n8n: execution stuck in running](https://ddragonjh.github.io/en/fix/n8n-execution-stuck-waiting): Open the execution and identify the last node that actually started.
+- [ChatGPT: Something went wrong](https://ddragonjh.github.io/en/fix/chatgpt-something-went-wrong): Check the OpenAI status page before changing local settings.
+- [ChatGPT: A network error occurred](https://ddragonjh.github.io/en/fix/chatgpt-network-error): Retry once after checking the OpenAI status page.
+- [Gemini API: 429 RESOURCE_EXHAUSTED](https://ddragonjh.github.io/en/fix/gemini-api-429-resource-exhausted): Identify the exact quota named in the error and confirm the Google Cloud project.
+- [Gemini API: 503 UNAVAILABLE](https://ddragonjh.github.io/en/fix/gemini-api-503-unavailable): Retry only transient failures with capped exponential backoff and jitter.
+- [Gemini API: 403 PERMISSION_DENIED](https://ddragonjh.github.io/en/fix/gemini-api-403-permission-denied): Confirm which Google Cloud project owns the key and that the Gemini API is enabled.
+- [Claude API: 529 overloaded_error](https://ddragonjh.github.io/en/fix/claude-api-529-overloaded): Capture the request ID and treat 529 as a transient server error.
+- [Claude API: 400 invalid_request_error](https://ddragonjh.github.io/en/fix/claude-api-400-invalid-request): Log the sanitized error body and identify the first field named in the message.
+- [Claude API: stream idle timeout - partial response received](https://ddragonjh.github.io/en/fix/claude-api-stream-idle-timeout): Record the last event and request ID before retrying the incomplete operation.
+- [Cursor: Named models unavailable](https://ddragonjh.github.io/en/fix/cursor-named-models-unavailable): Check Cursor service status and confirm the model is still available for your plan.
+- [Docker: could not select device driver with capabilities: [[gpu]]](https://ddragonjh.github.io/en/fix/docker-could-not-select-device-driver-gpu): Confirm the host driver sees the GPU with nvidia-smi.
+- [Docker: driver failed programming external connectivity](https://ddragonjh.github.io/en/fix/docker-driver-failed-external-connectivity): Inspect the full daemon message and check whether the host port is already bound.
+- [Docker: no space left on device](https://ddragonjh.github.io/en/fix/docker-no-space-left-on-device): Inspect host disk, inode, and Docker storage usage before deleting anything.
+- [pip: externally-managed-environment](https://ddragonjh.github.io/en/fix/pip-externally-managed-environment): Create a project virtual environment instead of changing the system interpreter.
+- [pip: subprocess-exited-with-error](https://ddragonjh.github.io/en/fix/pip-subprocess-exited-with-error): Scroll to the first error emitted by the failed subprocess instead of the final summary.
+- [pip: Could not find a version that satisfies the requirement](https://ddragonjh.github.io/en/fix/pip-no-matching-distribution): Confirm the exact package name and remove an impossible version pin.
+- [npm: ENOENT: no such file or directory, open package.json](https://ddragonjh.github.io/en/fix/npm-enoent-package-json): Print the current directory and list its files.
+- [npm: EACCES: permission denied](https://ddragonjh.github.io/en/fix/npm-eacces-permission-denied): Identify the exact denied path and inspect its owner before changing permissions.
+- [npm: Missing script: dev](https://ddragonjh.github.io/en/fix/npm-missing-script-dev): List the scripts actually defined in the current package.
+- [Kubernetes: ImagePullBackOff](https://ddragonjh.github.io/en/fix/kubernetes-imagepullbackoff): Describe the Pod and read the newest pull event verbatim.
+- [Kubernetes: CrashLoopBackOff](https://ddragonjh.github.io/en/fix/kubernetes-crashloopbackoff): Describe the Pod and record the last termination reason and exit code.
+- [Kubernetes: container terminated with exit code 137](https://ddragonjh.github.io/en/fix/kubernetes-exit-code-137): Confirm OOMKilled and compare memory usage with the configured request and limit.
+- [Vercel: Command npm run build exited with 1](https://ddragonjh.github.io/en/fix/vercel-npm-run-build-exited-1): Open the full build log and find the first real error above the exit-code summary.
+- [Vercel: 404: NOT_FOUND](https://ddragonjh.github.io/en/fix/vercel-404-not-found): Test the generated deployment URL separately from the custom domain.
+- [Git: src refspec main does not match any](https://ddragonjh.github.io/en/fix/git-src-refspec-main-does-not-match): Check whether the repository has a commit and print the current branch name.
+- [Git: failed to push some refs (non-fast-forward)](https://ddragonjh.github.io/en/fix/git-failed-to-push-non-fast-forward): Fetch the remote and inspect the commits that differ on each side.

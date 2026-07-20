@@ -4,7 +4,7 @@ A searchable, multilingual library of step-by-step fixes for AI tools, APIs, aut
 
 **Live site:** https://ddragonjh.github.io/
 
-- 24 detailed troubleshooting guides
+- 49 detailed troubleshooting guides
 - 18 developer and AI tools covered
 - 37 reading languages through instant translation
 - Official sources, structured data, RSS, and a crawlable sitemap
