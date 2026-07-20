@@ -26,10 +26,15 @@ Source-linked troubleshooting for exact AI, API, automation, cloud, container, P
 - [Container failures from Docker to Kubernetes](https://ddragonjh.github.io/guides/docker-kubernetes-container-failures): Trace image, startup, port, storage, memory, and health failures in the order they occur.
 - [GPU and CUDA errors: memory, drivers, and runtime compatibility](https://ddragonjh.github.io/guides/cuda-gpu-memory-errors): A practical way to distinguish capacity problems from driver, toolkit, package, and container mismatches.
 - [How to share debug logs without leaking secrets](https://ddragonjh.github.io/guides/share-debug-logs-without-leaking-secrets): Preserve the evidence another person needs while removing credentials, personal data, and machine-specific noise.
+- [How to compare dependency environments after a regression](https://ddragonjh.github.io/guides/compare-dependency-environments): Turn package drift between a working and failing environment into a short, testable list of regression candidates.
 
 ## Site standards and tools
+- [Private developer evidence tools](https://ddragonjh.github.io/tools)
 - [Private error matcher](https://ddragonjh.github.io/diagnose)
 - [Private log sanitizer, run comparison, and debug handoff](https://ddragonjh.github.io/debug-lab)
+- [Stack trace root-cause triage](https://ddragonjh.github.io/tools/stack-trace)
+- [Dependency environment diff](https://ddragonjh.github.io/tools/dependency-diff)
+- [HTTP retry and Retry-After analyzer](https://ddragonjh.github.io/tools/http-retry)
 - [Editorial policy](https://ddragonjh.github.io/editorial-policy)
 - [Privacy policy](https://ddragonjh.github.io/privacy)
 
